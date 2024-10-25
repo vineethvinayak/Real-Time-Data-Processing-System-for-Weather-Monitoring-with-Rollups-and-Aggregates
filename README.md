@@ -3,7 +3,7 @@
 This project implements a real-time weather monitoring system that collects, processes, and displays weather data with Rollups and Aggregates for multiple cities including the 6 major metro cities of India. It provides users with current weather information, daily summaries, forecasts, and temperature trends utilizing data from the OpenWeatherMap API (https://openweathermap.org/)  ,all accessible through a web interface.
 
 
-# Features
+# Features:
 
 - Real-time weather data with rollups and aggregates and forecast displayed for any city in the world through the search tab.(BONUS)
 - Continuously Updated (every 2 min) current weather conditions for six major cities in India though the Current Weather card.
@@ -17,15 +17,17 @@ This project implements a real-time weather monitoring system that collects, pro
 - Responsive web interface for easy access on various devices.(BONUS)
 - Extended support to multiple weather parameters from the API and incorporation into rollups and aggregates.(BONUS)
 
-## Tech Stack
+## Tech Stack:
 
 **Client:** HTML5, CSS, JavaScript
 
 **Server:** Python v3.12, Flask 2.0.1, Sqlite
 
 
-## Directory Organization
-## Installation
+## Directory Organization:
+![Screenshot 2024-10-25 094039](https://github.com/user-attachments/assets/223e28f3-1f86-44c1-88e1-f108f06756c1)
+
+## Installation:
 
 - Clone the repository
 
