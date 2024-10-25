@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Weather Monitor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #aab0f4; /* Light blue background */
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+        }
+        h2 {
+            font-weight: bold;
+            color: #444;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f8ff;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Real-time Weather Monitor</h1>
+    
+    <div class="card search-card">
+        <h2>Search Weather</h2>
+        <div class="search-input">
+            <input type="text" id="search-input" placeholder="Search for any city">
+            <button onclick="searchCity()">Search</button>
+        </div>
+        <div id="search-result" class="search-result"></div>
+    </div>
+
+    <div class="card temperature-unit-card">
+        <select id="temperature-unit" onchange="changeTemperatureUnit()">
+            <option value="celsius">Celsius</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+    </div>
+
+    <div class="card current-weather-card">
+        <h2>Current Weather</h2>
+        <div id="current-weather" class="city-grid">
+            <div class="city-row">
+                <div id="current-weather-bengaluru" class="city-weather"></div>
+                <div id="current-weather-chennai" class="city-weather"></div>
+                <div id="current-weather-delhi" class="city-weather"></div>
+            </div>
+            <div class="city-row">
+                <div id="current-weather-hyderabad" class="city-weather"></div>
+                <div id="current-weather-kolkata" class="city-weather"></div>
+                <div id="current-weather-mumbai" class="city-weather"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card daily-summaries-card">
+        <h2>Daily Summaries</h2>
+        <div id="daily-summaries" class="city-grid">
+            <div class="city-row">
+                <div id="daily-summary-bengaluru" class="city-summary"></div>
+                <div id="daily-summary-chennai" class="city-summary"></div>
+                <div id="daily-summary-delhi" class="city-summary"></div>
+            </div>
+            <div class="city-row">
+                <div id="daily-summary-hyderabad" class="city-summary"></div>
+                <div id="daily-summary-kolkata" class="city-summary"></div>
+                <div id="daily-summary-mumbai" class="city-summary"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card weather-forecasts-card">
+        <h2>5-day Weather Forecast</h2>
+        <select id="forecast-city" onchange="updateForecast()">
+            {% for city in cities %}
+            <option value="{{ city }}">{{ city }}</option>
+            {% endfor %}
+        </select>
+        <div id="weather-forecast"></div>
+    </div>
+
+    <div class="card alerts-card">
+        <h2>Alerts</h2>
+        <input type="text" id="alert-city" placeholder="City">
+        <input type="number" id="alert-threshold" placeholder="Temperature threshold">
+        <button onclick="setAlert()">Set Alert</button>
+        <div id="current-set-alerts">
+            <h3>Current Set Alerts</h3>
+            <ul id="alerts-list"></ul>
+        </div>
+        <div id="alerts"></div>
+    </div>
+
+    <div class="card">
+        <h2>Temperature Trends</h2>
+        <select id="trend-city">
+            {% for city in cities %}
+                <option value="{{ city }}">{{ city }}</option>
+            {% endfor %}
+        </select>
+        <button onclick="updateTemperatureTrend()">Show Trend</button>
+        <div id="temperature-trend-container" style="width: 100%; height: 300px;">
+            <canvas id="temperature-trend-chart"></canvas>
+        </div>
+    </div>
+
+    <div class="footer">
+        © Vineeth Vinayak MH
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTemperatureTrend();
+        });
+    </script>
+</body>
+</html>
