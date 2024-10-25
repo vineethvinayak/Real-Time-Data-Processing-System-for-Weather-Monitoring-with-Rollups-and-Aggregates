@@ -17,17 +17,17 @@ This project implements a real-time weather monitoring system that collects, pro
 - Responsive web interface for easy access on various devices.(BONUS)
 - Extended support to multiple weather parameters from the API and incorporation into rollups and aggregates.(BONUS)
 
-## Tech Stack:
+# Tech Stack:
 
 **Client:** HTML5, CSS, JavaScript
 
 **Server:** Python v3.12, Flask 2.0.1, Sqlite
 
 
-## Directory Organization:
+# Directory Organization:
 ![Screenshot 2024-10-25 094039](https://github.com/user-attachments/assets/223e28f3-1f86-44c1-88e1-f108f06756c1)
 
-## Installation:
+# Installation:
 
 - Clone the repository
 
