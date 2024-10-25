@@ -33,7 +33,7 @@ This project implements a real-time weather monitoring system that collects, pro
 
 ```bash
   git clonehttps://github.com/vineethvinayak/Real-Time-Data-Processing-System-for-Weather-Monitoring-with-Rollups-and-Aggregates.git
-  cd weather_monitor_system
+  cd Real-Time-Data-Processing-System-for-Weather-Monitoring-with-Rollups-and-Aggregates
 ```
 - Create Virtual Envirnoment and activate it 
 
