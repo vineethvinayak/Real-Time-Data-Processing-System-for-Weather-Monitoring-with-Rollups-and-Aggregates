@@ -63,6 +63,7 @@ This project implements a real-time weather monitoring system that collects, pro
 ```bash
    python run.py
 ```
+- Open a web browser and navigate to http://127.0.0.1:5000/ to use the application
 
 # Security Considerations (BONUS): 
 - Input Validation: - Implemented strict input validation for all user inputs, especially for the city search and alert threshold features. 
